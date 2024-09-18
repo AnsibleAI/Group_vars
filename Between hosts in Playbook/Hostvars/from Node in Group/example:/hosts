@@ -1,0 +1,11 @@
+[desktop]
+192.168.122.129
+
+[desktop:vars]
+ansible_become_password=u
+
+[server]
+192.168.122.173
+
+[server:vars]
+ansible_become_password=u
