@@ -1,0 +1,15 @@
+- hosts: desktop
+  tasks:
+  - ansible.builtin.debug:
+      msg: "{{ ansible_default_ipv4.address }}"
+  
+
+- hosts: server
+  tasks:
+  - debug:
+      msg: "{{ groups['desktop'][0] }}"
+  
+  - debug:
+      msg: "{{ groups.desktop[0] }}"
+
+  # from: https://forum.ansible.com/t/how-to-get-another-hosts-ip-hostname-from-the-inventory-as-a-variable/2125
