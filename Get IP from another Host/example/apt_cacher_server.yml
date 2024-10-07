@@ -1,0 +1,4 @@
+- name: Default node on lan (bare metal or virtual)
+  ansible.builtin.set_fact:
+    aptcacher_server: "{{ groups['apt_cacher_server'][0]['ansible_default_ipv4']['address'] }}"
+  when: not ansible_user_id == "vagrant"
